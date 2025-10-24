@@ -1,0 +1,40 @@
+v {background-color: green}
+#number1 {background-color: yellow;}
+.cl1 {background-color: blue; color:red;
+      font-size:24px; font-family:Comic Sans MS, Comic Sans, cursive;
+      font-weight: 900; width:50%; height:100px; widht:50;
+      border-color: green; border-style: solid; border-width:5px; border-radius:20px;
+      }
+
+div {width:200px; height:200px; background-color:#FF69B4;
+     border-radius:50%; position: fixed; bottom:100px; right:100px;
+    transition: 2s;}
+
+h1::first-letter{
+    color: deeppink;
+    font-size: 50px;
+    border-radius: 10px;
+    background-color: #FF7F50
+}
+
+h2::before{
+    content: 'Город ';
+    color: deeppink;
+    font-size: 50px;
+    border-radius: 10px;
+    background-color: #FF7F50
+}
+
+h2::after{
+    content: ' герой';
+    color: deeppink;
+    font-size: 50px;
+    border-radius: 10px;
+    background-color: #9ACD32
+}
+
+div:hover {background-color:#66CDAA; width:300px; height:300px; transition: 2s;}
+
+a:link{color: #FF1493}
+a:visited{color: green}
+a:active{color: #CD5C5C}

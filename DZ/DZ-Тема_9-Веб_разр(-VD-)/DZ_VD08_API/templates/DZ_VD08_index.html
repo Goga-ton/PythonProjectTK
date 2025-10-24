@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Информация о погоде</title>
+</head>
+<body>
+    <h1>Дававй узнаем цитаты ВЕЛИКИХ или просто людей</h1>
+
+    <form method="post">
+        <button type="submit">Пролучить цитату</button>
+    </form>
+
+    <div class="result">
+        {% if citata %}
+            <h3>Автор цитаты: {{ citata[0]["a"] }}</h3>
+            <p>Цитата: {{ citata[0]["q"] }}</p>
+        {% endif %}
+    </div>
+
+</body>
+</html>

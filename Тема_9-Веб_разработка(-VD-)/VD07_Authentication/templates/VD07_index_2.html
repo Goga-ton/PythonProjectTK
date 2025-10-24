@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flask WTF Form</title>
+</head>
+<body>
+    <h1>Flask WTF Form</h1>
+    <form method="POST"> <!--    Указываем метод, потому что что нам нужно только отправлять данные-->
+        {{ form.hidden_tag() }} <!-- скрытая форма для проверки доступа к сайту-->
+        <p>
+            {{ form.name.label }}<br>
+            {{ form.name(size=32) }}<br>
+            {% for error in form.name.errors %} <!-- Отображение ошибок валидации-->
+                <span style="color: red;">[{{ error }}]</span>
+            {% endfor %}
+        </p>
+        <p>
+            {{ form.submit() }}
+        </p>
+    </form>
+</body>
+</html>

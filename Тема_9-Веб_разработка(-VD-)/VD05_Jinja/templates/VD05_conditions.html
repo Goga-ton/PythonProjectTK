@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{caption}}</title>
+</head>
+<body>
+    {% if user %}
+      <p>Вы вошли под именем {{user}}</p>
+    {% endif %}
+      <p>Вы должны выложить {{number}}
+    {% if number==1 %}
+      пост
+    {% elif 2<=number<=4 %}
+      поста
+    {% else %}
+      постов
+    {% endif %}
+    </p>
+
+    <p>{% for user in list %}
+       {{user}}
+       {% endfor %}
+    </p>
+    <h1>Выводим стихотворение Сергея Васильева</h1>
+    <p style="font-family: URW Chancery L, cursive; font-size: 20px; color: #800000;">
+       {% for i in poem %}
+       {{i}}<br>
+       {% endfor %}
+    </p>
+
+</body>
+</html>

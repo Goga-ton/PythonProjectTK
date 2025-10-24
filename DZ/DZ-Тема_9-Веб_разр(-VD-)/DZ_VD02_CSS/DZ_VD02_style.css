@@ -1,0 +1,65 @@
+.card{
+    margin-top: 15px;
+    width: 450px;
+    height: 520px;
+    background-color: #7FFFD4;
+    border-radius: 50px;
+}
+
+.card:hover h4{
+    color: ;
+    font-size:20px;
+    transition:0.5s;
+}
+
+img{
+    width: 40%;
+    margin-top: 15px;
+    margin-left: 130px;
+    border-radius: 50px;
+    transition: 0.5s;
+}
+
+img:hover{
+    width:95%;
+    border-radius:50px;
+    margin-top: 3px;
+    margin-left: 10px;
+    transition: 1s;
+}
+
+h2{
+    color:#FF4500;
+    background-color: #00FF7F;
+    border-radius:10px;
+    text-align: center;
+    width:95%;    margin-left: 9px;
+    font-family:URW Chancery L, cursive;
+}
+
+h4{
+    color:#1E90FF;
+    background-color: #00FFFF;
+    border-radius:10px;
+    text-align: center;
+    width:95%;
+    margin-left: 9px;
+    font-family:URW Chancery L, cursive;
+}
+
+h3{
+    color:#9400D3;
+    background-color: #FFDAB9;
+    border-radius:10px;
+    text-align: center;
+    width:95%;
+    margin-left: 9px;
+    font-family:URW Chancery L, cursive;
+}
+
+body {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+

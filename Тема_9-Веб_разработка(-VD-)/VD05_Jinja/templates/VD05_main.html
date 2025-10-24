@@ -1,0 +1,128 @@
+{% extends "VD05_shablon.html" %}
+
+{% block title %}
+    main (Сельские труженики)
+{% endblock %}
+
+{% block content %}
+    <h1 style="font-family: Bradley Hand, cursive; color: #FF8C00;">Сельские труженики</h1>
+
+    <div id="carouselExampleAutoplaying" class="carousel slide mx-auto" style="max-width: 1200px;" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active" >
+                <img src="../static/image/card1.jpg" class="d-block w-100" alt="Фоточка НЕТУ">
+            </div>
+            <div class="carousel-item">
+                <img src="../static/image/card2.jpg" class="d-block w-100" alt="Фоточка НЕТУ">
+            </div>
+            <div class="carousel-item">
+                <img src="../static/image/card4.jpg" class="d-block w-100" alt="Фоточка НЕТУ">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Предыдущий</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Следующий</span>
+        </button>
+    </div>
+
+    <div class="container my-4">
+        <div class="row ">
+            <div class="col">
+               <div class="card h-100" style="width: 18rem; margin: 0 auto;">
+                   <img src="../static/image/card1.jpg" class="card-img-top" alt="Нэту картинки">
+               <div class="card-body d-flex flex-column">
+                   <h5 class="card-title">Кукурузник</h5>
+                   <p class="card-text">Кукуруза — высокорослое однолетнее травянистое растение, достигающее высоты 3 м и более.</p>
+                   <a href="https://ru.wikipedia.org/wiki/Кукуруза" target="_blank" class="btn btn-primary mt-auto">Википедия</a>
+               </div>
+               </div>
+            </div>
+
+            <div class="col">
+                <div class="card h-100" style="width: 18rem;  margin: 0 auto;">
+                    <img src="../static/image/card2.jpg" class="card-img-top" alt="Нэту картинки">
+                <div class="card-body d-flex flex-column">
+                    <h5 class="card-title">Элеваторщик</h5>
+                    <p class="card-text">Человек, работающий на зернохранилище (элеваторе), — это чаще всего оператор зерносушильного комплекса,
+                        машинист зернопогрузочных машин или складской рабочий.</p>
+                    <a href="https://ru.wikipedia.org/wiki/Зернохранилище" target="_blank" class="btn btn-primary mt-auto">Википедия</a>
+                </div>
+                </div>
+            </div>
+
+            <div class="col">
+                 <div class="card h-100" style="width: 18rem;  margin: 0 auto;">
+                     <img src="../static/image/card4.jpg" class="card-img-top" alt="Нэту картинки">
+                 <div class="card-body d-flex flex-column">
+                     <h5 class="card-title">Садовод :)</h5>
+                     <p class="card-text">В овощях много клетчятки, а Клетчатка — сложный углевод и пищевое волокно, которое содержится в продуктах растительного происхождения.</p>
+                     <a href="https://ru.wikipedia.org/w/index.php?go=%D0%9F%D0%B5%D1%80%D0%B5%D0%B9%D1%82%D0%B8&search=%D0%BE%D0%B2%D0%BE%D1%89%D0%B8&title=%D0%A1%D0%BB%D1%83%D0%B6%D0%B5%D0%B1%D0%BD%D0%B0%D1%8F%3A%D0%9F%D0%BE%D0%B8%D1%81%D0%BA&ns0=1"
+                        target="_blank" class="btn btn-primary mt-auto">Википедия</a>
+                 </div>
+                 </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                <t class="text-danger fw-bold">Подробнее о кукурузе</t>
+                </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <strong>Кукуруза была введена в культуру 7—12 тыс. лет назад на территории современной Мексики.</strong> Кукуруза имеет хорошо развитую мочковатую корневую систему, проникающую на глубину 100—150 см. На нижних
+                       узлах стебля могут образовываться воздушные опорные корни, предохраняющие стебель от падения и снабжающие
+                       растение водой и питательными веществами. Стебель прямостоячий, до 4 м в высоту и 7 см в диаметре, без полости внутри (в отличие от большинства других злаков).
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    <t class="text-danger fw-bold">Раскажим о Зернохранилище</t>
+                </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <strong>Зернохрани́лище — здание или сооружение для хранения зерна.</strong> 3ернохранилище должно отвечать следующим требованиям:
+                            <p></p>
+                            <p>1) Надёжно сохранять зерно, защищая его от различных видов воздействия:</p>
+                            <p>1.1) атмосферных осадков;</p>
+                            <p>1.2) грунтовых и поверхностных вод;</p>
+                            <p>1.3) грызунов, птиц и иных вредителей зерна и зернопродуктов.</p>
+                            <p>2) Быть удобным для загрузки и выгрузки зерна и контроля за его состоянием.</p>
+                            <p>Зернохранилища строятся либо недалеко от мест переработки зерна (мельницы, заводы), либо вблизи транспортных узлов
+                                (морские и речные порты, железнодорожные узлы). В качестве первых примитивных зернохранилищ использовались ямы, вырытые
+                                в земле. Древними греками для хранения зерна использовались большие керамические сосуды — пифосы.</p>
+                </div>
+            </div>
+        </div>
+        <div class="accordion-item">
+            <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                <t class="text-danger fw-bold">В чем польза овощей</t>
+                </button>
+            </h2>
+            <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <strong>Чем полезны овощи.</strong> У них низкая калорийность, при этом они содержат много витаминов, микроэлементов, пищевых волокон и других
+                    питательных веществ. Согласно рекомендациям Всемирной организации здравоохранения (ВОЗ), в день необходимо съедать не менее 400 граммов,
+                    или пяти порций, овощей и фруктов, не включая крахмалосодержащие плоды, например картофель. Исследования показывают, что у людей, в рационе которых
+                    много овощей и фруктов, снижается риск заболеть раком толстой кишки, пищевода или желудка. Также ежедневное потребление овощей уменьшает риск
+                    развития хронических неинфекционных заболеваний, к которым относятся сердечно-сосудистые патологии, включая атеросклероз, ишемическую болезнь
+                    сердца и т. д., сахарный диабет второго типа, ожирение. Овощи незаменимы для работы желудочно-кишечного тракта, поскольку улучшают моторику ЖКТ,
+                    предотвращают запоры, помогают выводить продукты метаболизма и тяжёлые металлы.
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

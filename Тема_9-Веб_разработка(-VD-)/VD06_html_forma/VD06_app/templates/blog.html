@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Веб-форма HTML</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+          rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+          crossorigin="anonymous">
+</head>
+<body>
+<div class="container mt-4">
+    <!-- Заголовок -->
+    <div class="row">
+        <div class="col-12 text-center mb-4">
+            <h1 class="display-4 text-primary">Простой блог</h1>
+        </div>
+    </div>
+
+    <!-- Форма добавления поста -->
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-sm">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="card-title mb-0">Добавить новый пост</h5>
+                </div>
+                <div class="card-body">
+                    <form method="post" action="/">
+                        <div class="mb-3">
+                            <label for="title" class="form-label">Заголовок</label>
+                            <input id="title" type="text" name="ima" class="form-control" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="content" class="form-label">Текст поста</label>
+                            <textarea id="content" name="teck" rows="4" class="form-control" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-success w-100">Опубликовать пост</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <hr class="my-5">
+
+    <!-- Список постов -->
+    <div class="row">
+        <div class="col-12">
+            <h2 class="text-center mb-4">Последние посты</h2>
+
+            {% for post in posts %}
+            <div class="card mb-3 shadow-sm">
+                <div class="card-body">
+                    <h4 class="card-title text-primary">{{ post.kt }}</h4>
+                    <p class="card-text">{{ post.mc }}</p>
+                    <small class="text-muted">Опубликовано: сейчас</small>
+                </div>
+            </div>
+            {% endfor %}
+
+            {% if not posts %}
+            <div class="text-center text-muted">
+                <p>Пока нет постов. Будьте первым!</p>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>А
+
+
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script>
+</body>
+</html>
