@@ -5,7 +5,7 @@ class Personal:
     # def __str__(self):
     #     return f'{self.name} is {self.age} years old'
     def say_hi(self, name):
-        return f"Привет {name}! Меня зовут {self.name} мне {self.age} лет."
+        return f"Привет! Меня зовут {self.name} мне {self.age} лет. "
 
 class Professor(Personal):
     def __init__(self, name, age, years):

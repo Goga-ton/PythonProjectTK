@@ -1,16 +1,19 @@
-import matplotlib.pyplot as plt
-import pandas as pd
+class Personal:
+    def __init__(self, name, age):
+        self.name = name  # self - ссылка на создаваемый объект
+        self.age = age
+    def __str__(self):
+        return f'Привет {self.name}! Мне {self.age}'
 
+    def say_hi(self, friend_name):
+        # self здесь - тот же самый объект, что и в __init__!
+        return f"Привет {friend_name}! Мне {self.age}"
 
-prices = pd.read_csv('/DZ/DZ-Тема_8-АналДан(-AZ-)/divan_prices.csv')['Цена']
-#prices = df['Цена']
+    def get_birth_year(self, current_year):
+        # self здесь - тоже тот же объект!
+        return f"Привет {current_year}! Мне {self.age}"
 
-
-plt.hist(prices, bins=7, color='lightblue', edgecolor='black')
-
-plt.title('Гистограмма цен на аренду')
-plt.xlabel('Цена в рублях')
-plt.ylabel('Количество')
-
-plt.show()
-
+personal1 = Personal("Антон", 20)
+print(personal1)
+print(personal1.say_hi("Жора"))
+print(personal1.get_birth_year(50))
