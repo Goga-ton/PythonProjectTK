@@ -7,10 +7,12 @@ from flask_login import login_user, logout_user, login_required, current_user
 @app.route('/')
 @login_required
 def index():
-    return render_template('VD09_index.html')
+    from VD09_host.VD09_models import User  # ← Добавьте импорт
+    top_users = User.query.order_by(User.clicks.desc()).limit(5).all()
+    return render_template('VD09_index.html', top_users=top_users, User=User)
 
 @app.route('/register', methods=['GET', 'POST'])
-def registration():
+def register():
     if current_user.is_authenticated:
         return redirect(url_for('index'))
     form = RegistrationForm()
@@ -19,9 +21,9 @@ def registration():
         user = User(username=form.username.data, password=hashed_password)
         db.session.add(user)
         db.session.commit()
-        flash('Вы успешно зарегестрировались')
+        flash('Вы успешно зарегестрировались', 'success')
         return redirect(url_for('login'))
-    return render_template('VD09_register.html')
+    return render_template('VD09_register.html', form=form)
 
 @app.route('/login', methods=['GET', 'POST'])
 def login():
@@ -34,8 +36,8 @@ def login():
             login_user(user)
             return redirect(url_for('index'))
         else:
-            flash('Вы ввели некоректные данные')
-    return render_template('VD09_login.html')
+            flash('Вы ввели некоректные данные', 'danger')
+    return render_template('VD09_login.html', form=form)
 
 @app.route('/logout')
 def logout():

@@ -1,10 +1,102 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "VD09_base.html" %}
 
-</body>
-</html>
+{% block content %}
+<div class="text-center">
+    <h1 class="display-4 mb-4">🎮 Кликер Игра</h1>
+
+    {% if current_user.is_authenticated %}
+        <div class="stats-card mb-5">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="card bg-light">
+                        <div class="card-body">
+                            <h3 class="card-title">Статистика игрока</h3>
+                            <p class="card-text display-6 text-primary">{{ current_user.clicks }}</p>
+                            <p class="text-muted">Кликов</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="clicker-section mb-5">
+            <button onclick="window.location.href='{{ url_for('click') }}'"
+                    class="btn click-btn btn-warning btn-lg rounded-pill p-4">
+                <span style="font-size: 3rem;">🎯</span><br>
+                <span style="font-size: 1.5rem;">КЛИКНУТЬ!</span>
+            </button>
+            <p class="text-muted mt-3">Нажмите кнопку чтобы увеличить счетчик</p>
+        </div>
+
+        <div class="leaderboard mt-5">
+            <h3 class="mb-4">🏆 Топ игроков</h3>
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="list-group">
+                        {% for user in top_users %}
+                            <div class="list-group-item d-flex justify-content-between align-items-center
+                                       {{ 'list-group-item-success' if user.id == current_user.id else '' }}">
+                                <span>
+                                    {{ user.username }}
+                                    {% if user.id == current_user.id %}(Вы){% endif %}
+                                </span>
+                                <span class="badge bg-primary rounded-pill">{{ user.clicks }}</span>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    {% else %}
+        <div class="welcome-section">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="card bg-light">
+                        <div class="card-body py-5">
+                            <h2 class="card-title mb-4">Добро пожаловать в Кликер Игру!</h2>
+                            <p class="card-text lead mb-4">
+                                Соревнуйтесь с другими игроками, набирайте клики и займите первое место в таблице лидеров!
+                            </p>
+                            <div class="d-grid gap-2 d-md-block">
+                                <a href="{{ url_for('register') }}" class="btn btn-primary btn-lg me-md-2">Начать игру</a>
+                                <a href="{{ url_for('login') }}" class="btn btn-outline-primary btn-lg">Войти</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+</div>
+
+<style>
+.click-btn {
+    font-size: 2rem;
+    padding: 20px 40px;
+    transition: all 0.3s ease;
+    border: none;
+    box-shadow: 0 8px 25px rgba(255, 193, 7, 0.4);
+}
+
+.click-btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 12px 35px rgba(255, 193, 7, 0.6);
+}
+
+.click-btn:active {
+    transform: scale(0.95);
+}
+
+.stats-card .card {
+    border: none;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.leaderboard .list-group-item {
+    border: none;
+    margin-bottom: 5px;
+    border-radius: 10px !important;
+}
+</style>
+{% endblock %}

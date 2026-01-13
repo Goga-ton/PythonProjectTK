@@ -3,7 +3,7 @@
 {% block content %}
 <div class="row justify-content-center">
     <div class="col-md-6">
-        <h2 class="text-center mb-4">📝 Регистрация</h2>
+        <h2 class="text-center mb-4">🔑 Вход в аккаунт</h2>
 
         <form method="POST" action="">
             {{ form.hidden_tag() }}
@@ -32,25 +32,13 @@
                 {% endif %}
             </div>
 
-            <div class="mb-3">
-                {{ form.confirm_password.label(class="form-label") }}
-                {{ form.confirm_password(class="form-control" + (" is-invalid" if form.confirm_password.errors else "")) }}
-                {% if form.confirm_password.errors %}
-                    <div class="invalid-feedback">
-                        {% for error in form.confirm_password.errors %}
-                            {{ error }}
-                        {% endfor %}
-                    </div>
-                {% endif %}
-            </div>
-
             <div class="d-grid">
-                {{ form.submit(class="btn btn-primary btn-lg") }}
+                {{ form.submit(class="btn btn-success btn-lg") }}
             </div>
         </form>
 
         <div class="text-center mt-3">
-            <small>Уже есть аккаунт? <a href="{{ url_for('login') }}" class="text-decoration-none">Войти</a></small>
+            <small>Нет аккаунта? <a href="{{ url_for('register') }}" class="text-decoration-none">Зарегистрироваться</a></small>
         </div>
     </div>
 </div>
